@@ -1,3 +1,33 @@
+@import "myMixins.scss";
+
+.rollovable {
+  $color:  red;
+
+  @include rollovable($color);
+}
+
+.generic-button {
+  $genericButtonSize: 24px;
+  $color:  blue;
+  
+  @include roundedCorners(50px);
+  
+  font-size: $genericButtonSize * 4;
+  color: white;
+  cursor: pointer;
+
+  &:hover {
+    color: black;
+  }
+}
+
+.extended-button {
+  @extend .generic-button;
+
+  color: black;
+  width: (500px + 100px) / 5;
+}
+
 .App {
   text-align: center;
 }
@@ -30,3 +60,4 @@
     transform: rotate(360deg);
   }
 }
+

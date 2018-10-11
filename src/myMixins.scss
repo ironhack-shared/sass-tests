@@ -1,0 +1,12 @@
+@mixin roundedCorners ($radius) {
+  border-radius: $radius;
+}
+
+@mixin rollovable($color) {
+  background-color: $color;
+  transition: all 0.5s;
+  
+  &:hover {
+    background-color: lighten($color, 60);
+  }
+}
